@@ -1,0 +1,13 @@
+PROJ = Client
+OBJS = main.o Client.o LogReader.o ConsoleSender.o
+CXX = g++
+RM = rm -rf
+CFLAGS= -c -Wall -I.
+$(PROJ):$(OBJS)
+	$(CXX) $^ -o $@
+%.o:%.cpp
+	$(CXX) $(CFLAGS) $^
+clean:
+	$(RM) $(PROJ) $(OBJS)
+
+
